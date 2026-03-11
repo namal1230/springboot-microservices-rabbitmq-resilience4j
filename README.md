@@ -1,181 +1,93 @@
-🚀 Spring Boot Microservices Architecture
+---
 
-A Spring Boot Microservices project demonstrating a modern distributed system using messaging, resilience patterns, distributed tracing, and CI/CD automation.
+# 🚀 Spring Boot Microservices Architecture
 
-This project showcases how to build scalable and fault-tolerant microservices using the Spring Cloud ecosystem.
+A **Spring Boot Microservices project** demonstrating a modern distributed system using messaging, resilience patterns, distributed tracing, and CI/CD automation.
 
-📌 Features
+This project showcases how to build **scalable and fault-tolerant microservices** using the Spring Cloud ecosystem.
 
-🔹 Microservices architecture with multiple services
+---
 
-🔹 Asynchronous communication using RabbitMQ
+# 📌 Features
 
-🔹 Distributed tracing with Zipkin
+* 🔹 Microservices architecture with multiple services
+* 🔹 Asynchronous communication using RabbitMQ
+* 🔹 Distributed tracing with Zipkin
+* 🔹 Service resilience using Resilience4j
+* 🔹 Circuit Breaker implementation using Circuit Breaker Pattern
+* 🔹 Configuration refresh with Spring Cloud Bus
+* 🔹 Containerized services using Docker
+* 🔹 Automated build and deployment with GitLab CI/CD
 
-🔹 Service resilience using Resilience4j
+---
 
-🔹 Circuit Breaker implementation using Circuit Breaker Pattern
+# 🏗️ Architecture
 
-🔹 Configuration refresh with Spring Cloud Bus
+The system follows a **distributed microservices architecture** where services communicate through **REST APIs and asynchronous messaging**.
 
-🔹 Containerized services using Docker
+## Components
 
-🔹 Automated build and deployment with GitLab CI/CD
+* API Gateway
+* Service Registry (Eureka)
+* Config Server
+* **Employee Service**
+* **Department Service**
+* Notification Service
+* Messaging Queue
+* Monitoring and Tracing Tools
 
-🏗️ Architecture
+---
 
-The system follows a distributed microservices architecture where services communicate through REST APIs and asynchronous messaging.
+# 🛠️ Tech Stack
 
-Components
+| Technology   | Purpose                             |
+| ------------ | ----------------------------------- |
+| Spring Boot  | Backend microservices               |
+| Spring Cloud | Microservices ecosystem             |
+| RabbitMQ     | Event-driven communication          |
+| Zipkin       | Request tracing                     |
+| Resilience4j | Fault tolerance                     |
+| Docker       | Containerization                    |
+| GitLab CI/CD | Continuous Integration & Deployment |
 
-API Gateway
+---
 
-Service Registry (Eureka)
+# 📦 Messaging with RabbitMQ
 
-Config Server
+Services communicate **asynchronously through RabbitMQ queues**.
 
-Order Service
+### Example Flow
 
-Product Service
+```
+Employee Service → RabbitMQ Queue → Notification Service
+```
 
-Notification Service
+---
 
-Messaging Queue
+# 📊 Distributed Tracing
 
-Monitoring and Tracing Tools
+Using **Zipkin**, we can trace requests across multiple microservices.
 
-🛠️ Tech Stack
-Technology	Purpose
-Spring Boot	Backend microservices
-Spring Cloud	Microservices ecosystem
-RabbitMQ	Event-driven communication
-Zipkin	Request tracing
-Resilience4j	Fault tolerance
-Docker	Containerization
-GitLab CI/CD	Continuous Integration & Deployment
-⚙️ CI/CD Pipeline
+### Example Request Flow
 
-The project includes an automated CI/CD pipeline implemented using GitLab.
+```
+API Gateway → Employee Service → Department Service → Database
+```
 
-Pipeline Stages
+---
 
-1️⃣ Build
-2️⃣ Test
-3️⃣ Package
-4️⃣ Docker Image Build
-5️⃣ Deploy
+# 📷 System Diagram
 
-Example .gitlab-ci.yml
-stages:
-  - build
-  - test
-  - docker
-  - deploy
-
-The pipeline automatically:
-
-Builds the Spring Boot services
-
-Runs tests
-
-Builds Docker images
-
-Deploys services
-
-📦 Messaging with RabbitMQ
-
-Services communicate asynchronously through RabbitMQ queues.
-
-Example Flow
-Order Service → RabbitMQ Queue → Notification Service
-Benefits
-
-Loose coupling
-
-Better scalability
-
-Reliable message delivery
-
-🛡️ Fault Tolerance
-
-The system uses Resilience4j to prevent cascading failures.
-
-Implemented Patterns
-
-Circuit Breaker
-
-Retry
-
-Rate Limiter
-
-Timeout Handling
-
-Example
-@CircuitBreaker(name = "productService", fallbackMethod = "fallbackMethod")
-📊 Distributed Tracing
-
-Using Zipkin, we can trace requests across multiple microservices.
-
-Example Request Flow
-API Gateway → Order Service → Product Service → Database
-
-Zipkin visualizes request latency and service dependencies.
-
-🔗 Repository Links
-GitLab Repository
-https://gitlab.com/namal1230/cicd-pipeline-integrate.git
-🚀 Getting Started
-1️⃣ Clone the Repository
-git clone https://gitlab.com/namal1230/cicd-pipeline-integrate.git
-2️⃣ Start Infrastructure
-
-Run Docker containers:
-
-docker-compose up
-
-This will start:
-
-RabbitMQ
-
-Zipkin
-
-Microservices
-
-3️⃣ Run Services
-
-Start each Spring Boot service:
-
-mvn spring-boot:run
-📷 System Diagram
+```
 [ Client ]
      |
      v
 [ API Gateway ]
      |
  -------------------------
- |           |           |
- v           v           v
-Order     Product     Notification
-Service    Service       Service
-     |
-     v
-   RabbitMQ
-📚 Learning Purpose
-
-This project demonstrates:
-
-Event-driven microservices
-
-Resilience patterns
-
-Distributed tracing
-
-DevOps CI/CD practices
-
-👨‍💻 Author
-
-Namal Dilmith
-
-Software Engineering Student
-Java Developer
-Microservices Enthusiast
+ |                       |
+ v                       v
+Employee Service     Department Service
+        |
+        v
+      RabbitMQ
