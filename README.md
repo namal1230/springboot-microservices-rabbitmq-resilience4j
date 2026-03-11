@@ -82,7 +82,7 @@ https://gitlab.com/namal1230/cicd-pipeline-integrate.git
 # 1️⃣ Clone the Repository
 ```
 git clone https://gitlab.com/namal1230/cicd-pipeline-integrate.git
----
+```
 
 # 📷 System Diagram
 
