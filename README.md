@@ -73,11 +73,14 @@ Using **Zipkin**, we can trace requests across multiple microservices.
 ```
 API Gateway → Employee Service → Department Service → Database
 ```
-🔗 Repository Links
-GitLab Repository
+### 🔗 Repository Links
+# GitLab Repository
+```
 https://gitlab.com/namal1230/cicd-pipeline-integrate.git
-🚀 Getting Started
-1️⃣ Clone the Repository
+```
+### 🚀 Getting Started
+# 1️⃣ Clone the Repository
+```
 git clone https://gitlab.com/namal1230/cicd-pipeline-integrate.git
 ---
 
