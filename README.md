@@ -57,7 +57,7 @@ GitLab CI/CD	Continuous Integration & Deployment
 
 The project includes an automated CI/CD pipeline implemented using GitLab.
 
-Pipeline stages:
+Pipeline Stages
 
 1️⃣ Build
 2️⃣ Test
@@ -65,8 +65,7 @@ Pipeline stages:
 4️⃣ Docker Image Build
 5️⃣ Deploy
 
-Example .gitlab-ci.yml stages:
-
+Example .gitlab-ci.yml
 stages:
   - build
   - test
@@ -87,11 +86,9 @@ Deploys services
 
 Services communicate asynchronously through RabbitMQ queues.
 
-Example flow:
-
+Example Flow
 Order Service → RabbitMQ Queue → Notification Service
-
-Benefits:
+Benefits
 
 Loose coupling
 
@@ -103,7 +100,7 @@ Reliable message delivery
 
 The system uses Resilience4j to prevent cascading failures.
 
-Implemented patterns:
+Implemented Patterns
 
 Circuit Breaker
 
@@ -111,17 +108,15 @@ Retry
 
 Rate Limiter
 
-Timeout handling
+Timeout Handling
 
-Example:
-
+Example
 @CircuitBreaker(name = "productService", fallbackMethod = "fallbackMethod")
 📊 Distributed Tracing
 
 Using Zipkin, we can trace requests across multiple microservices.
 
-Example request flow:
-
+Example Request Flow
 API Gateway → Order Service → Product Service → Database
 
 Zipkin visualizes request latency and service dependencies.
@@ -152,9 +147,6 @@ Start each Spring Boot service:
 
 mvn spring-boot:run
 📷 System Diagram
-
-You can add an architecture diagram here.
-
 [ Client ]
      |
      v
@@ -184,4 +176,6 @@ DevOps CI/CD practices
 
 Namal Dilmith
 
-Software Engineering Student | Java Developer | Microservices Enthusiast
+Software Engineering Student
+Java Developer
+Microservices Enthusiast
